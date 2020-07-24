@@ -63,6 +63,15 @@
 
         </LinearLayout>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:textColor="#FFFFFF"
+            android:background="@color/colorPrimary">
+
+        </Button>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
