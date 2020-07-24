@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateRecipeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creating a new recipe?"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="75dp"
+            android:text="Name:"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingredients\n - Sugar\n -..."
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="8">
+
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="1.- Boil water\n -..."
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="8">
+
+        </EditText>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
