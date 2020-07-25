@@ -17,7 +17,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="IChef"
+            android:text="@string/ichef"
             android:textColor="@color/colorPrimary"
             android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Become the chef you want."
+            android:text="@string/become_the_chef_you_want"
             android:textSize="25sp"/>
 
     </LinearLayout>

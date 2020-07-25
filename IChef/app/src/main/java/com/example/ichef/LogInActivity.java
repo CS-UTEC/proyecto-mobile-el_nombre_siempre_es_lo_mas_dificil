@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -33,14 +34,14 @@ public class LogInActivity extends AppCompatActivity {
         Toast.makeText(this, string, Toast.LENGTH_LONG).show();
     }
 
-    public void goToMyRecipe(String username, int id) {
-        Intent intent = new Intent(this, MyRecipes.class);
+    public void goRecipeActivity(String username, int id) {
+        Intent intent = new Intent(this, RecipeActivity.class);
         intent.putExtra("id", id);
         intent.putExtra("username", username);
         startActivity(intent);
     }
 
-    public void onClickLogInAction(View view) {
+    public void onClickSignUpAction(View view) {
         EditText txtUsername = (EditText) findViewById(R.id.etUsername);
         EditText txtPassword = (EditText) findViewById(R.id.etPassword);
         final String username = txtUsername.getText().toString();
@@ -54,17 +55,18 @@ public class LogInActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                "http://10.0.2.2:8080/authenticate",
+                "http://ec2-35-170-115-7.compute-1.amazonaws.com/authenticate",
                 jsonObject,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        showMessage("Welcome!");
                         showMessage(response.toString());
+                        showMessage("Success");
+                        String username = null;
                         try {
-                            String username = response.getString("username");
+                            username = response.getString("username");
                             int id = response.getInt("id");
-                            goToMyRecipe(username, id);
+                            goRecipeActivity(username, id);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -73,6 +75,9 @@ public class LogInActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        showMessage(error.toString());
+                        Log.d("TAG", "onClickSignUpAction: " + error.toString());
+                        showMessage("Fail");
                     }
                 }
         );

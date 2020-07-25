@@ -10,14 +10,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".CreateRecipeActivity"></activity>
-        <activity
-            android:name=".MyRecipes"
-            android:label="@string/title_activity_my_recipes"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LogInActivity" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ViewRecipeActivity"></activity>
+        <activity android:name=".RecipeActivity" />
         <activity android:name=".SignUpActivity" />
+        <activity android:name=".LogInActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
